@@ -19,10 +19,10 @@ jobs:
       
     # Build the Docker image
     - name: Build & Publish
-      run: |        
-        gcloud config set project ${{ secrets.GCP_PROJECT }}
-        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
-        gcloud config set run/region us-central1
+      run: |
+        gcloud config set project ${{ secrets.GCP_PROJECT }} --verbosity=debug
+        gcloud builds submit --tag gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }} --verbosity=debug
+        gcloud config set run/region us-central1 --verbosity=debug
       
     # Deploy the Docker image to the GKE cluster
     - name: Deploy
