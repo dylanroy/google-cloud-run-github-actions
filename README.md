@@ -2,17 +2,27 @@
 A sample project with a Github Action for deploying to Google Cloud Run.
 
 ## Set Up
+In order to deploy this project on your own you just need to take the following steps.
 
-### Create Service Account
-https://console.cloud.google.com/iam-admin/serviceaccounts?project=dylan-roy
+### 1. Create Service Account
+The first step will be to create a service account by going to your [GCP Console Service Account Admin](https://console.cloud.google.com/iam-admin/serviceaccounts).
 
-https://cloud.google.com/run/docs/reference/iam/roles#additional-configuration
+After which will need to give the service account the following roles.
+ - Cloud Build Service Account
+ - Cloud Build Editor
+ - Service Account User
+ - Viewer
 
-### Create Github Secrets
+### 2. Create Github Secrets
+You will next need to navigate to the Settings Dashboard where you can add the following Github secrets. For this repo the link will be the following if you want to navigate directly to the location for your repo.
+
+
 https://github.com/dylanroy/google-cloud-run-github-actions/settings/secrets
 
-#### Github Secrets
-Here we setup our Github Secrets
- - GCP_CREDENTIALS - Service Account
- - GCP_PROJECT - Google Project
- - GCP_APPLICATION - Google Service Account
+Here we setup our Github secrets:  
+ - **GCP_CREDENTIALS** - This is your service account credentials that you will need to generate in the Google Cloud Console.  
+ - **GCP_PROJECT** - Your Google Project that you will deploying to Cloud Run.  
+ - **GCP_APPLICATION** - Your Google service account application name for your Cloud Run service.
+
+## Resources
+ - [GCP Console Service Account Admin](https://console.cloud.google.com/iam-admin/serviceaccounts)
