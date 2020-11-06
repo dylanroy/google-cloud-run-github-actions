@@ -21,6 +21,7 @@ https://github.com/dylanroy/google-cloud-run-github-actions/settings/secrets
 
 Here we setup our Github secrets:  
  - **GCP_CREDENTIALS** - This is your service account credentials that you will need to generate in the Google Cloud Console.  
+ - **GCP_EMAIL** - This is the email that identifies the service account that you have provided credentials for in the secret labeled GCP_CREDENTIALS.
  - **GCP_PROJECT** - Your Google Project that you will deploying to Cloud Run.  
  - **GCP_APPLICATION** - Your Google service account application name for your Cloud Run service.
 
